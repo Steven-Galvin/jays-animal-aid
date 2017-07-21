@@ -62,3 +62,8 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+# helper method avail to specs
+def jsonParse
+  JSON.parse(response.body)
+end
