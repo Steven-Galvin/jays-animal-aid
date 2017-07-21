@@ -11,8 +11,11 @@ class AnimalsController < ApplicationController
     end
 
     def create
-      @animal = Animal.create!(animal_params)
-      json_response(@animal, :created)
+      if @animal = Animal.create!(animal_params)
+        render status: 201, json: {
+           message: "Your animal has been created successfully."
+        }
+      end
     end
 
     def update
@@ -26,7 +29,11 @@ class AnimalsController < ApplicationController
 
     def destroy
       @animal = Animal.find(params[:id])
-      @animal.destroy
+      if @animal.destroy
+        render status: 202, json: {
+           message: "Your animal has been destroyed successfully."
+        }
+      end
     end
 
     private
