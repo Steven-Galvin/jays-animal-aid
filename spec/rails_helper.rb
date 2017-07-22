@@ -67,3 +67,5 @@ end
 def jsonParse
   JSON.parse(response.body)
 end
+
+Animal.destroy_all
