@@ -4,7 +4,7 @@ describe "search animals by breed route", type: :request do
 
   before do
     @animal = FactoryGirl.create(:animal)
-    get "/animals?breed=#{@animal.breed}"
+    get "/search?breed=#{@animal.breed}"
   end
 
   it 'returns animal matching breed' do

@@ -11,6 +11,16 @@ class AnimalsController < ApplicationController
     json_response(@animals)
   end
 
+  def search
+    if age = params[:age]
+      @animals = Animal.age_search(age)
+    else
+      breed = params[:breed]
+      @animals = Animal.breed_search(breed)
+    end
+    json_response(@animals)
+  end
+
   def show
     @animal = Animal.find(params[:id])
     json_response(@animal)

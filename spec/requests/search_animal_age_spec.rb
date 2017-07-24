@@ -4,7 +4,7 @@ describe "search animals by age route", type: :request do
 
   before do
     @animal = FactoryGirl.create(:animal)
-    get "/animals?age=#{@animal.age}"
+    get "/search?age=#{@animal.age}"
   end
 
   it 'returns animal matching age' do
