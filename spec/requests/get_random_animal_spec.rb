@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-describe "get all animals route", type: :request do
+describe "get random animal route", type: :request do
   let!(:animals) { FactoryGirl.create_list(:animal, 30)}
 
-  before { get '/animals'}
+  before { get '/random'}
 
-  it 'returns all animals' do
-    expect(jsonParse.size).to eq(30)
+  it 'returns random animal' do
+    expect(jsonParse.size).to eq(1)
   end
 
   it 'returns status code 200' do

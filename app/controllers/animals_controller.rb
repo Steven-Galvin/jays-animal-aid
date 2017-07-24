@@ -21,6 +21,11 @@ class AnimalsController < ApplicationController
     json_response(@animals)
   end
 
+  def random
+    @animal = Animal.order("RANDOM()").limit(1)
+    json_response(@animal)
+  end
+
   def show
     @animal = Animal.find(params[:id])
     json_response(@animal)
