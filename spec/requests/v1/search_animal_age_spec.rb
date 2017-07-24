@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-describe "search animals by breed route", type: :request do
+describe "v1 || search animals by age route", type: :request do
 
   before do
     @animal = FactoryGirl.create(:animal)
-    get "/search?breed=#{@animal.breed}"
+    get "/v1/search?age=#{@animal.age}"
   end
 
-  it 'returns animal matching breed' do
+  it 'returns animal matching age' do
     expect(jsonParse[0]['name']).to eq(@animal.name)
   end
 

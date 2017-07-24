@@ -1,4 +1,4 @@
-class AnimalsController < ApplicationController
+class V1::AnimalsController < ApplicationController
   include Response
   def index
     if age = params[:age]

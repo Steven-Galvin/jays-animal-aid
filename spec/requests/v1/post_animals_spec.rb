@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-describe "post an animal route", type: :request do
+describe "v1 || post an animal route", type: :request do
 
   before do
     @animal = FactoryGirl.build(:animal)
-      post "/animals", params: {
+      post "/v1/animals", params: {
         specie: @animal.specie,
         breed: @animal.breed,
         name: @animal.name,

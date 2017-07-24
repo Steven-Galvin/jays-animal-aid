@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe "get random animal route", type: :request do
+describe "v1 || get random animal route", type: :request do
   let!(:animals) { FactoryGirl.create_list(:animal, 30)}
 
-  before { get '/random'}
+  before { get '/v1/random'}
 
   it 'returns random animal' do
     expect(jsonParse.size).to eq(1)

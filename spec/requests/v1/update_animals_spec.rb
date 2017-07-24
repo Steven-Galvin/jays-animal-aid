@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe "update animal request", type: :request do
+describe "v1 || update animal request", type: :request do
   before do
     animal = FactoryGirl.create(:animal)
-    put "/animals/#{animal.id}/?name=tom cat"
+    put "/v1/animals/#{animal.id}/?name=tom cat"
   end
 
   it 'should return status 200' do

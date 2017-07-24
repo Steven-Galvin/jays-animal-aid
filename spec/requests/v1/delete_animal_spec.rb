@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-describe "destroy animal route", type: :request do
+describe "v1 || destroy animal route", type: :request do
 
   before do
     @animal1 = FactoryGirl.create(:animal)
     @animal2 = FactoryGirl.create(:animal)
-    delete "/animals/#{@animal1.id}"
+    delete "/v1/animals/#{@animal1.id}"
   end
 
   it 'should return status 200' do
